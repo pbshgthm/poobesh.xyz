@@ -68,7 +68,7 @@
 	</ol>
 	<div class="page-break"></div>
 	<div class="head-1">First Iteration</div>
-	<div class="p-text">The best source for images that can we search with a keyword — *drum roll* Google Images !! Well, atually no. Google images API contains a lot of duplicates that gives the same palettes. So I went with Bing image search API. I
+	<div class="p-text">The best source for images that we can search with a keyword — *drum roll* Google Images !! Well, atually no. Google images API contains a lot of duplicates that gives the same palettes. So I went with Bing image search API. I
 		used a Machine Learning algorithm called K Means clustering to extract the color palettes. I then sent it out to the front end to be displayed.</div>
 	<img src="assets/vangogh-v1.png" alt="vangogh-v1" class="img-large" />
 	<div class="img-caption">Screenshots of Vangogh V1.0</div>
@@ -85,8 +85,41 @@
 	<img src="assets/vangogh-working.png" alt="Vangogh working" class="img-large" />
 	<div class="img-caption">Working of Vangogh</div>
 	<div class="p-text">A lot of research and iterations went into the making of the final product. Although I’ve skipped the details of how exactly the system works, here is an attempt to capture the detailed flow.</div>
-	<img src="assets/vangogh-schematic.png" alt="Vangogh Schematic" class="img-large"/>
-	<div class="p-text">Now that the system was working to an acceptable level, I went ahead and made a bunch of UI updates that would let the user tap into the full potential of the product. It was hard to resist adding a ton of features, but after careful elimination, I narrowed on things that would actually make sense.</div>
+	<img src="assets/vangogh-schematic.png" alt="Vangogh Schematic" class="img-large" />
+	<div class="p-text">Now that the system was working to an acceptable level, I went ahead and made a bunch of UI updates that would let the user tap into the full potential of the product. It was hard to resist adding a ton of features, but after
+		careful elimination, I narrowed on things that would actually make sense.</div>
+	<img src="assets/vangogh-help-main.png" alt="Vangogh help overlay" class="img-cover" />
+	<div class="p-text">Color distribution is something that had always been hard to visualise. Although we have histograms, it does’t give an intuitive sense of the color profile of images or palettes. Hence, I created a 3D visualisation of the
+		colors in the image, that paints a better picture of the chromatic composition. Here, the RGB values of colors are used to plot a color as a point in 3D space. The idea is to give a glimpse of how the the distribution remains similar for
+		similar themes.</div>
+	<img src="assets/vangogh-3dcolor.png" alt="3D visualisation of colors" class="img-fit" />
+	<div class="img-caption" />3D visualisation of the color distribution</div>
+	<div class="p-text">Sometimes we need the exact color palette of an image. So I made a add-on tool where you can upload an image and extract its color palette.</div>
+	<img src="assets/vangogh-help-img.png" alt="Vangogh Image Overlay" class="img-cover" />
+	<div class="p-text">Some color palettes primarily contain very light colors. So I’ve added a dark mode that really helps reads light color palettes.</div>
+	<img src="assets/vangogh-dark-light.png" alt="Dark and Theme" class="img-large" />
+	<div class="img-caption">Dark and Light theme</div>
+	<div class="p-text">Its been quite a long way from the first version I made. In terms of functionality, UI and accuracy, I believe there has been a drastic improvement.</div>
+	<img src="assets/vangogh-old-new.png" alt="Vangogh 1.0 and 2.0" class="img-large" />
+	<div class="img-caption">Comparison of Vangogh 1.0 vs Vangogh 2.0</div>
+	<div class="head-1">Future Updates</div>
+	<div class="p-text">Although, the system currently gives usable palettes, its no where closer to suggest palettes with human accuracy. For term that are really abstract like ‘trust’, the system fails to give a good palette. This is because we
+		don’t have a solid color representation for such terms, and Vangogh in a way is a direct reflection of how we use palettes in artworks we create.</div>
+	<img src="assets/vangogh-good-bad.png" alt="Vangogh performance comparison" class="img-large" />
+	<div class="img-caption">Vangogh performance comparison</div>
+	<div class="head-1">Future Roadmap</div>
+	<ul class="list-elements">
+		<li>Have the ability to distinguish between background effects and subject to have a better representative image</li>
+		<li>Compare the search terms and palettes generated for contextual appropriateness</li>
+		<li>Have the ability to get user rating for color palettes to learn over time what makes a good color palette</li>
+		<li>Let the user tweak the palettes in app and learn from the tweaks</li>
+	</ul>
+	<div class="p-text">The whole project is Open source. The Server is hosted on AWS currently. And the complete source code is hosted at Github. I’d love to receive feedbacks and suggestions as well as collaborations on Github.</div>
+	<a href="https://github.com/pbshgthm/Vangogh" target="_blank">
+		<div class="link-box">
+			Check out the code at <span class="link-url">https://github.com/pbshgthm/Vangogh</span>
+		</div>
+	</a>
 </body>
 
 </html>

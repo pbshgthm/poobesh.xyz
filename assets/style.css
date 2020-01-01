@@ -155,3 +155,11 @@ a{
 	color: #757575;
 	line-height: 30px;
 }
+.img-fit{
+	margin-left: auto;
+	margin-right: auto;
+	width: 700px;
+	display: block;
+	margin-top: 40px;
+	margin-bottom: 10px;
+}
