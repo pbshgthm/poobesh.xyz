@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Portfolio - Poobesh</title>
+
+	<!-- update the version number as needed -->
+	<script defer src="/__/firebase/7.6.0/firebase-app.js"></script>
+	<!-- include only the Firebase features as you need -->
+	<script defer src="/__/firebase/7.6.0/firebase-auth.js"></script>
+	<script defer src="/__/firebase/7.6.0/firebase-database.js"></script>
+	<script defer src="/__/firebase/7.6.0/firebase-messaging.js"></script>
+	<script defer src="/__/firebase/7.6.0/firebase-storage.js"></script>
+	<!-- initialize the SDK after all desired features are loaded -->
+	<script defer src="/__/firebase/init.js"></script>
+	<link rel="stylesheet" href="../assets/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display&display=swap" rel="stylesheet">
+</head>
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		try {
+			let app = firebase.app();
+			let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
+			document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
+		} catch (e) {
+			console.error(e);
+			document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
+		}
+	});
+</script>
+
+<body>
+	<div id="nav-bar">
+		<div id="home-link">PG</div>
+		<div id="nav-link-holder">
+			<div class="nav-links">work</div>
+			<div class="nav-links">fun</div>
+			<div class="nav-links">me</div>
+		</div>
+	</div>
+
+	<div class="page-title-1">Vangogh</div>
+	<div class="page-title-2">An AI powered color palette generator</div>
+	<img src="assets/vangogh-cover.png" alt="cover-image"/ class="img-cover">
+	<div class="focus-text-1">Ever wanted a color palette that evokes the feeling of ‘a winter evening’, ‘cherry blossom’ or ‘ocean sunset’ ?
+	</div>
+	<a href="http://thevangogh.in" target="_blank">
+		<div class="link-box">
+			Check out the live site at <span class="link-url">http://thevangogh.in</span>
+		</div>
+	</a>
+	<div class="head-1">Google, but for color palettes</div>
+	<div class="p-text">Color palettes are an important aspect of every design. Choosing a right palette is far from a trivial task. This seemingly simple task requires a good understanding of colors theory. More often, as designers we are faced with
+		a situation where we need to choose a color palette that evokes a certain feeling. Be it illustrations, graphic design or palette for UI elements, creating a contextually appropriate color palette is an essential step in the process. How do
+		we usually go about it ? Is there a way, we can automate the process ? These are the questions I had in mind that made me work on Vangogh.</div>
+	<div class="focus-text-2">How do we make a machine create color palette based on a keyword ?</div>
+	<div class="p-text">To answer that question, lets think of how we use a color palette. When designing something, we pick colors very carefully in a combination that would represent and evoke the feel of a certain idea. And we use those palettes
+		in art and designs we create. Be it photography or illustrations, their color palettes reflects the choice we made while choosing them.</div>
+	<div class="focus-text-2">The art, photographs and designs we make, reflect the color palette we chose that would evoke the desired feeling</div>
+	<div class="p-text">We could extract palettes from these works we have created, as they reflect how we feel about certain color combinations. For example, when we want a color palette to evoke ‘sunset’ , we could extract color palettes from
+		images of sunsets, as we can assume a good photograph generally has a good color palette. So I broke it down into a set of simple (actually, not simple) process</div>
+	<ol class="list-elements">
+		<li>Get lots of images for a keyword</li>
+		<li>Extract color palette from each image</li>
+		<li>Hope the palettes are contextually appropriate</li>
+	</ol>
+	<div class="page-break"></div>
+	<div class="head-1">First Iteration</div>
+	<div class="p-text">The best source for images that can we search with a keyword — *drum roll* Google Images !! Well, atually no. Google images API contains a lot of duplicates that gives the same palettes. So I went with Bing image search API. I
+		used a Machine Learning algorithm called K Means clustering to extract the color palettes. I then sent it out to the front end to be displayed.</div>
+	<img src="assets/vangogh-v1.png" alt="vangogh-v1" class="img-large" />
+	<div class="img-caption">Screenshots of Vangogh V1.0</div>
+	<div class="p-text">Clearly, this wasn’t working. A bunch of problems</div>
+	<ul class="list-elements">
+		<li>Colors were pretty random. Reason ? Not all images returned from the search are very representative of the idea we are trying to capture</li>
+		<li>Most of the time, background like ground, sky dominates the palette</li>
+		<li>Who needs this tool on mobile anyway ?</li>
+	</ul>
+	<div class="p-text">After a round of suggestions and feedbacks, I set out to make version 2.0</div>
+	<div class="page-break"></div>
+	<div class="head-1">Vangogh 2.0</div>
+	<div class="p-text">I made a series of quick improvements that clearly resulted in visible increase in accuracy and a better user experience. Here’s the rough flow of how the system works.</div>
+	<img src="assets/vangogh-working.png" alt="Vangogh working" class="img-large" />
+	<div class="img-caption">Working of Vangogh</div>
+	<div class="p-text">A lot of research and iterations went into the making of the final product. Although I’ve skipped the details of how exactly the system works, here is an attempt to capture the detailed flow.</div>
+	<img src="assets/vangogh-schematic.png" alt="Vangogh Schematic" class="img-large"/>
+	<div class="p-text">Now that the system was working to an acceptable level, I went ahead and made a bunch of UI updates that would let the user tap into the full potential of the product. It was hard to resist adding a ton of features, but after careful elimination, I narrowed on things that would actually make sense.</div>
+</body>
+
+</html>
