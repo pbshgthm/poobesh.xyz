@@ -4,33 +4,17 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Portfolio - Poobesh</title>
+	<title>Vangogh - Poobesh</title>
 
-	<!-- update the version number as needed -->
 	<script defer src="/__/firebase/7.6.0/firebase-app.js"></script>
-	<!-- include only the Firebase features as you need -->
 	<script defer src="/__/firebase/7.6.0/firebase-auth.js"></script>
 	<script defer src="/__/firebase/7.6.0/firebase-database.js"></script>
 	<script defer src="/__/firebase/7.6.0/firebase-messaging.js"></script>
 	<script defer src="/__/firebase/7.6.0/firebase-storage.js"></script>
-	<!-- initialize the SDK after all desired features are loaded -->
 	<script defer src="/__/firebase/init.js"></script>
 	<link rel="stylesheet" href="../assets/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display&display=swap" rel="stylesheet">
 </head>
-<script>
-	document.addEventListener('DOMContentLoaded', function() {
-		try {
-			let app = firebase.app();
-			let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
-			document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
-		} catch (e) {
-			console.error(e);
-			document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
-		}
-	});
-</script>
-
 <body>
 	<div id="nav-bar">
 		<div id="home-link">PG</div>
@@ -121,5 +105,4 @@
 		</div>
 	</a>
 </body>
-
 </html>
