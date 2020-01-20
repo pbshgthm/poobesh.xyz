@@ -63,7 +63,7 @@ html,body{
 	text-align: center;
 	margin: 0 auto;
 	margin-top: 40px;
-	margin-bottom: 40px;
+	margin-bottom: 100px;
 	width: 700px;
 	color: #757575;
 	font-family: 'Playfair Display', serif;
@@ -163,7 +163,7 @@ a{
 	margin-top: 40px;
 	margin-bottom: 10px;
 }
-.bold{
+.bold-orange{
 	font-weight: bold;
 	color: #D37F00;
 
@@ -178,4 +178,21 @@ a{
 	display: block;
 	margin-top: 40px;
 	margin-bottom: 10px;
+}
+.notice{
+	margin: auto;
+	margin-top: 50px;
+	margin-bottom: 40px;
+	border-radius: 10px;
+	background-color: #EDFCFF;
+	padding: 50px;
+	padding-left: 450px;
+	padding-right: 450px;
+	font-size: 20px;
+	text-align: center;
+	color: #0E9DBC;
+}
+.bold-blue{
+	font-weight: bold;
+	color: #007F9B;
 }
