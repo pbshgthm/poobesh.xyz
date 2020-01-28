@@ -7,6 +7,11 @@
 			"**/node_modules/**"
 		],
 		"cleanUrls": true,
-		"trailingSlash": true
+		"trailingSlash": true,
+		"appAssociation": "AUTO",
+		"rewrites": [{
+			"source": "/links/**",
+			"dynamicLinks": true
+		}]
 	}
 }
