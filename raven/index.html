@@ -1,87 +1,125 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Raven - Poobesh</title>
-	<script defer src="/__/firebase/7.6.0/firebase-app.js"></script>
-	<script defer src="/__/firebase/7.6.0/firebase-auth.js"></script>
-	<script defer src="/__/firebase/7.6.0/firebase-database.js"></script>
-	<script defer src="/__/firebase/7.6.0/firebase-messaging.js"></script>
-	<script defer src="/__/firebase/7.6.0/firebase-storage.js"></script>
-	<script defer src="/__/firebase/init.js"></script>
 	<link rel="stylesheet" href="../assets/style.css">
+	<link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display&display=swap" rel="stylesheet">
+	<script src="/__/firebase/7.7.0/firebase-app.js"></script>
+	<script src="/__/firebase/7.7.0/firebase-analytics.js"></script>
+	<script src="/__/firebase/init.js"></script>
+
+	<title>Raven - Poobesh</title>
+	<meta name="title" content="Raven - Poobesh">
+	<meta name="description" content="Developing an Interactive Dashboard to analyse childtrafficking in India.">
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://poobesh.xyz/raven">
+	<meta property="og:title" content="Raven - Poobesh">
+	<meta property="og:description" content="Developing an Interactive Dashboard to analyse childtrafficking in India.">
+	<meta property="og:image" content="https://poobesh.xyz/raven/assets/cover.jpg">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://poobesh.xyz/raven">
+	<meta property="twitter:title" content="Raven - Poobesh">
+	<meta property="twitter:description" content="Developing an Interactive Dashboard to analyse childtrafficking in India.">
+	<meta property="twitter:image" content="https://poobesh.xyz/raven/assets/cover.jpg">
+
 </head>
+
 <body>
 	<div id="nav-bar">
-		<div id="home-link">PG</div>
+		<a href="https://poobesh.xyz/" id="home-link">PG</a>
 		<div id="nav-link-holder">
-			<div class="nav-links">work</div>
-			<div class="nav-links">fun</div>
-			<div class="nav-links">me</div>
+			<a href="https://poobesh.xyz/" class="nav-links">portfolio</a>
+			<a href="https://poobesh.xyz/assets/Poobesh_resume.pdf" target="_blank" class="nav-links">resume</a>
+			<a href="https://poobesh.xyz/about" class="nav-links">about</a>
 		</div>
 	</div>
 	<div class="page-title-1">Project Raven</div>
 	<div class="page-title-2">Visualisation of Child Trafficking in India</div>
-	<img src="assets/cover.png" alt="cover-image" class="img-cover"/>
-	<div class="notice">The project is under an NDA, hence certain <br/>sections / scales / labels are removed from this documentation.</div>
+	<img src="assets/cover.jpg" alt="cover-image" class="img-cover" />
+	<div class="notice">
+		<div class="notice-text">The project is under an NDA, hence certain sections / scales / labels are removed from this documentation.</div>
+	</div>
 	<div class="focus-text-1">Building an Interactive Dashboard to be used by Kailash Satyarthi Children’s Foundation.</div>
 	<div class="head-1">Child trafficking in India is still a prevalent problem. How can Data help solve it ?</div>
 	<div class="focus-text-2">In India, it is estimated that there are around 135,000 children trafficked each year.</div>
-	<div class="p-text"><span class="bold-blue">Kailash Satyarthi Children’s foundation </span>(<a class="link-url" href="https://satyarthi.org.in" target="_blank"> https://satyarthi.org.in </a>) has been at the forefront of Child rights movement in India. They have successfully conducted a lot of raids, across India with the help of Police department and have rescued thousands of kids over the past decade. During such raids, they were able to aggregate a lot of data regarding the kids, their background, working conditions and more. This resulted in a database of over 20,000 children and 30+ data points each.</div>
+	<div class="p-text"><span class="bold-blue">Kailash Satyarthi Children’s foundation </span>(<a class="link-url" href="https://satyarthi.org.in" target="_blank"> https://satyarthi.org.in </a>) has been at the forefront of Child rights movement in
+		India. They have successfully conducted a lot of raids, across India with the help of Police department and have rescued thousands of kids over the past decade. During such raids, they were able to aggregate a lot of data regarding the kids,
+		their background, working conditions and more. This resulted in a database of over 20,000 children and 30+ data points each.</div>
 	<div class="focus-text-2">The idea then was to create a <span class="bold-blue">Data Story</span> that would capture the gravity of the child trafficking situation in India.</div>
 	<div class="head-1">Prepping the Data</div>
-	<div class="p-text">The data was a crude dump of information collected over a period of 15 years from children rescued in various raids. Since the data collected was updated by a lot of people, it was scattered over multiple spreadsheets with inconsistent entries and mismatching column labels.</div>
-	<img src="assets/raw-data.png" alt="Raw Data" class="img-large"/>
+	<div class="p-text">The data was a crude dump of information collected over a period of 15 years from children rescued in various raids. Since the data collected was updated by a lot of people, it was scattered over multiple spreadsheets with
+		inconsistent entries and mismatching column labels.</div>
+	<img src="assets/raw-data.jpg" alt="Raw Data" class="img-large" />
 	<div class="img-caption">Raw data in the form of Spreadsheets</div>
 	<div class="p-text">The data was then fed into a python script that formatted, filled in missing values, combined or split some columns to make it easier to deal with individual data points easily and was stored as a JSON file.</div>
-	<div class="p-text">All the places mentioned used the anglicised versions of the village names which were originally in Hindi. Due to this, and general human error, a lot of places were misspelt or missing certain key parts of the name. I used <a href="https://developer.here.com" target="_blank" class="link-url">HERE API</a> to get the coordinates from the village names. But due to the errors in the data as mentioned earlier, there were a lot of discrepancies between the village names and coordinates. Hence I created a visual method to evaluate the approximate error between actual location and coordinates from HERE API. The idea was to connect the lines between the local village and the local police station. Ideally, since they would be close by, the lines should be all very short. But, the data said something different.</div>
-	<img src="assets/maperror.png" alt="Visualising discrepancies between the village names and coordinates" class="img-fit">
+	<div class="p-text">All the places mentioned used the anglicised versions of the village names which were originally in Hindi. Due to this, and general human error, a lot of places were misspelt or missing certain key parts of the name. I used <a
+		 href="https://developer.here.com" target="_blank" class="link-url">HERE API</a> to get the coordinates from the village names. But due to the errors in the data as mentioned earlier, there were a lot of discrepancies between the village
+		names and coordinates. Hence I created a visual method to evaluate the approximate error between actual location and coordinates from HERE API. The idea was to connect the lines between the local village and the local police station. Ideally,
+		since they would be close by, the lines should be all very short. But, the data said something different.</div>
+	<img src="assets/maperror.jpg" alt="Visualising discrepancies between the village names and coordinates" class="img-fit">
 	<div class="img-caption">Visualising discrepancies between the village names and coordinates</div>
 	<div class="p-text">With better structured API call methods that applied rigorous filters on each query, I was able to bring down the error rate. Then I complied all the data required into a json format with 23 data points for each child.</div>
-	<img src="assets/data-fields.png" alt="Data fields" class="img-fit"/>
+	<img src="assets/data-fields.jpg" alt="Data fields" class="img-fit" />
 	<div class="page-break"></div>
 	<div class="head-1">Data exploration</div>
-	<div class="p-text">With the data formatted, I began exploring the data to better understand its nature. I used <a href="https://plot.ly/javascript/" target="_blank" class="link-url">Plotly.JS</a> to quickly generate plots of various attributes. This helped in understanding the scales, ranges, variations and other aspects of the data that would determine the visualisation methods.</div>
-	<img src="assets/exploration.png" alt="Data exploration" class="img-large"/>
+	<div class="p-text">With the data formatted, I began exploring the data to better understand its nature. I used <a href="https://plot.ly/javascript/" target="_blank" class="link-url">Plotly.JS</a> to quickly generate plots of various attributes.
+		This helped in understanding the scales, ranges, variations and other aspects of the data that would determine the visualisation methods.</div>
+	<img src="assets/exploration.jpg" alt="Data exploration" class="img-large" />
 	<div class="img-caption">Initial data exploration</div>
 	<div class="page-break"></div>
 	<div class="head-1">Iteration 1 : <span class="bold-blue">Dynamic Dots</span></div>
-	<div class="p-text">The initial idea was to create a data story using scroll telling. The whole data was to be represented using a dot matrix that form different plots. Each dot represented one child, and the dots moves around the screen forming different visualisations. </div>
-	<img src="assets/dots-multi.png" alt="Dot-matrix form in various types of plots" class="img-large"/>
+	<div class="p-text">The initial idea was to create a data story using scroll telling. The whole data was to be represented using a dot matrix that form different plots. Each dot represented one child, and the dots moves around the screen forming
+		different visualisations. </div>
+	<img src="assets/dots-multi.jpg" alt="Dot-matrix form in various types of plots" class="img-large" />
 	<div class="img-caption">Dot-matrix form in various types of plots</div>
-	<div class="p-text">To create this, I started packing the code I write into a small frame work on top of <a href="https://d3js.org" target="_blank" class="link-url">D3</a> that would let plug and play on data for a variety of plots using dot-matrix.</div>
-	<img src="assets/dots.gif" alt="Swarm migration style transition" class="img-fit"/>
+	<div class="p-text">To create this, I started packing the code I write into a small frame work on top of <a href="https://d3js.org" target="_blank" class="link-url">D3</a> that would let plug and play on data for a variety of plots using
+		dot-matrix.</div>
+	<img src="assets/dots.gif" alt="Swarm migration style transition" class="img-fit" />
 	<div class="img-caption">Swarm migration style transition</div>
 	<div class="p-text">The problem with this approach was the fact that the plots formed by dot matrix are very limited in scope. Only the basic types were possible and it was very inadequate to capture the richness of the data.</div>
 	<div class="page-break"></div>
 	<div class="head-1">Iteration 2 : <span class="bold-blue">Custom Shapes</span></div>
 	<div class="p-text">I started with mapping the native village, raid locations and the trafficking paths. For plotting the maps, <a href="https://docs.mapbox.com/mapbox-gl-js/api/" target="_blank" class="link-url">Mapbox GL JS</a> was used.</div>
-	<img src="assets/init-map.png" alt="Mapping the involved locations" class="img-large"/>
+	<img src="assets/init-map.jpg" alt="Mapping the involved locations" class="img-large" />
 	<div class="img-caption">Mapping the involved locations</div>
 	<div class="p-text">For rest of the data, I chose unconventional forms to visualise. The idea was to create an engaging visuals that would aid in story telling.</div>
-	<img src="assets/shapes.png" alt="Second iteration - using solid shapes" class="img-large"/>
+	<img src="assets/shapes.jpg" alt="Second iteration - using solid shapes" class="img-large" />
 	<div class="img-caption">Second iteration - using solid shapes</div>
 	<div class="p-text">To emphasis relationships between the data, appropriate transition animations were used. This exhibited how the data points are interconnected and helped in communicating causality and hierarchy.</div>
 	<img src="assets/shape-transition.gif" alt="Transition effects" class="img-large">
 	<div class="img-caption">Transitions animations to communicate the relationships between the data points.</div>
 	<div class="page-break"></div>
 	<div class="head-1">Final version :<span class="bold-blue"> Dashboard</span></div>
-	<div class="p-text">While developing the data story, it was evident that the data contains far more insights that creating a data story was wasting the richness of the data. After some talks with the organisation, I was able to convince them to let me develop a <span class="bold-blue">Dashboard</span> that could be used for <span class="bold-blue">Data backed decision making.</span></div>
+	<div class="p-text">While developing the data story, it was evident that the data contains far more insights that creating a data story was wasting the richness of the data. After some talks with the organisation, I was able to convince them to
+		let me develop a <span class="bold-blue">Dashboard</span> that could be used for <span class="bold-blue">Data backed decision making.</span></div>
 	<div class="focus-text-1">The dashboard could be used to plan strategies for rescue operations, policy making and identifying the underlying causes.</div>
 	<div class="p-text">With the new brief to create a dashboard, I decided to go with a modular approach. I created widgets for age distribution, industry distribution and more, which could be plugged into any plot and be used as a filter. </div>
-	<img src="assets/widgets.png"  alt="Widgets that could by plugged in to any chart" class="img-large">
+	<img src="assets/widgets.jpg" alt="Widgets that could by plugged in to any chart" class="img-large">
 	<div class="img-caption">Widgets that could by plugged in to any chart</div>
-	<div class="p-text">With widgets, one could click on any element in any plot and see other attributes of those elements. This shed light on the rich relationships between each data point. The screens were designed to reside have appropriate information density and fully interactive with relevant feedbacks.</div>
-	<img src="assets/dashboard.png" alt="Some of the screens of the dashboard" class="img-large"/>
+	<div class="p-text">With widgets, one could click on any element in any plot and see other attributes of those elements. This shed light on the rich relationships between each data point. The screens were designed to reside have appropriate
+		information density and fully interactive with relevant feedbacks.</div>
+	<img src="assets/dashboard.jpg" alt="Some of the screens of the dashboard" class="img-large" />
 	<div class="img-caption">Some of the screens of the dashboard</div>
-	<div class="p-text">Once the dashboard was completed, I developed a pipeline to  automate the process for future data updates. The server fetched the data from a shared Excel sheet and runs a validation test on the data. Missing cells and misspelt items are rectified and updated in the sheet and send to a database. When a client device requires the data, data is formatted and sent from the database.</div>
-	<img src="assets/pipeline.png" alt="Data Pipeline" class="img-fit"/>
+	<div class="p-text">Once the dashboard was completed, I developed a pipeline to automate the process for future data updates. The server fetched the data from a shared Excel sheet and runs a validation test on the data. Missing cells and misspelt
+		items are rectified and updated in the sheet and send to a database. When a client device requires the data, data is formatted and sent from the database.</div>
+	<img src="assets/pipeline.jpg" alt="Data Pipeline" class="img-fit" />
 	<div class="img-caption">Data pipeline</div>
-	<div class="notice">The dashboard is currently deployed and being used to guide a informed decision making and planning for <br/>Kailash Satyarthi Children's Foundation</div>
+	<div class="notice">
+		<div class="notice-text">The dashboard is currently deployed and being used to guide a informed decision making and planning for Kailash Satyarthi Children's Foundation.
+		</div>
+	</div>
 	<div class="page-space"></div>
-
-
 </body>
+<script type="text/javascript">
+	firebase.analytics().logEvent('raven');
+</script>
+
 </html>

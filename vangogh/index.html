@@ -2,29 +2,47 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Vangogh - Poobesh</title>
-	<script defer src="/__/firebase/7.6.0/firebase-app.js"></script>
-	<script defer src="/__/firebase/7.6.0/firebase-auth.js"></script>
-	<script defer src="/__/firebase/7.6.0/firebase-database.js"></script>
-	<script defer src="/__/firebase/7.6.0/firebase-messaging.js"></script>
-	<script defer src="/__/firebase/7.6.0/firebase-storage.js"></script>
-	<script defer src="/__/firebase/init.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../assets/style.css">
+	<link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display&display=swap" rel="stylesheet">
+	<script src="/__/firebase/7.7.0/firebase-app.js"></script>
+	<script src="/__/firebase/7.7.0/firebase-analytics.js"></script>
+	<script src="/__/firebase/init.js"></script>
+
+	<title>Vangogh - Poobesh</title>
+	<meta name="title" content="Vangogh - Poobesh">
+	<meta name="description" content="Designing and building an AI powered color paletter generator.">
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://poobesh.xyz/vangogh">
+	<meta property="og:title" content="Vangogh - Poobesh">
+	<meta property="og:description" content="Designing and building an AI powered color paletter generator.">
+	<meta property="og:image" content="https://poobesh.xyz/vangogh/assets/cover.jpg">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://poobesh.xyz/vangogh">
+	<meta property="twitter:title" content="Vangogh - Poobesh">
+	<meta property="twitter:description" content="Designing and building an AI powered color paletter generator.">
+	<meta property="twitter:image" content="https://poobesh.xyz/vangogh/assets/cover.jpg">
+
 </head>
 <body>
 	<div id="nav-bar">
-		<div id="home-link">PG</div>
+		<a href="https://poobesh.xyz/" id="home-link">PG</a>
 		<div id="nav-link-holder">
-			<div class="nav-links">work</div>
-			<div class="nav-links">fun</div>
-			<div class="nav-links">me</div>
+			<a href="https://poobesh.xyz/" class="nav-links">portfolio</a>
+			<a href="https://poobesh.xyz/assets/Poobesh_resume.pdf" target="_blank" class="nav-links">resume</a>
+			<a href="https://poobesh.xyz/about" class="nav-links">about</a>
 		</div>
 	</div>
 	<div class="page-title-1">Vangogh</div>
 	<div class="page-title-2">An AI powered color palette generator</div>
-	<img src="assets/cover.png" alt="cover-image" class="img-cover"/>
+	<a href="https://www.producthunt.com/posts/vangogh?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-vangogh" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=183805&theme=dark&period=daily" alt="VANGOGH - Generate color palettes using keywords, powered by AI | Product Hunt Embed" class="ph-badge-main"/></a>
+	<img src="assets/cover.jpg" alt="cover-image" class="img-cover"/>
 	<a href="http://thevangogh.in" target="_blank">
 		<div class="link-box">
 			Check out the live site at <span class="link-url">http://thevangogh.in</span>
@@ -34,7 +52,7 @@
 	<div class="head-1">Google, but for color palettes</div>
 	<div class="p-text">Color palettes are an important aspect of every design. Choosing a right palette is far from a trivial task. This seemingly simple task requires a good understanding of colors theory. More often, as designers we are faced with a situation where we need to choose a color palette that evokes a certain feeling. Be it illustrations, graphic design or palette for UI elements, creating a contextually appropriate color palette is an essential step in the process. How do we usually go about it ? Is there a way, we can automate the process ? These are the questions I had in mind that made me work on Vangogh.</div>
 	<div class="focus-text-1">Vangogh uses Machine Learning to generate color palettes based on keywords.</span></div>
-	<img src="assets/overview.png" alt="Overview of Vangogh" class="img-cover">
+	<img src="assets/overview.jpg" alt="Overview of Vangogh" class="img-cover">
 	<div class="img-caption">Overview of Vangogh</div>
 	<div class="focus-text-2">How do we make a machine create color palette based on a keyword ?</div>
 	<div class="p-text">To answer that question, lets think of how we use a color palette. When designing something, we pick colors very carefully in a combination that would represent and evoke the feel of a certain idea. And we use those palettes
@@ -50,7 +68,7 @@
 		<li>Hope the palettes are contextually appropriate</li>
 	</ol>
 	<div class="p-text">The best source for images that we can search with a keyword — Google Images. But Google Images API contains a lot of duplicates that gives the same palettes. So I decided to go with Bing Image search API. I used a Machine Learning algorithm called <span class="bold-purple">K Means clustering</span> to extract the color palettes from each image. I its sent to the front-end to be displayed as palettes.</div>
-	<img src="assets/vangogh-1.png" alt="vangogh-v1" class="img-large" />
+	<img src="assets/vangogh-1.jpg" alt="vangogh-v1" class="img-large" />
 	<div class="img-caption">Screenshots of Vangogh V1.0</div>
 	<div class="p-text">Clearly, this wasn’t working. A bunch of problems</div>
 	<ul class="list-elements">
@@ -62,42 +80,42 @@
 	<div class="page-break"></div>
 	<div class="head-1">Vangogh 2.0 : <span class="purple">Project to Tool</span></div>
 	<div class="p-text">I made a series of quick improvements that clearly resulted in visible increase in accuracy and a better user experience. The backend is built in python and uses <a href="https://scikit-learn.org/stable/" class="link-url" target="_blank">scikit-learn</a> library for Machine Learning. The front end is built using <a href="https://jquery.com" class="link-url" target="_blank">JQuery</a> and <a href="https://plot.ly/javascript/" class="link-url" target="_blank">Plotly.js.</a> Here’s the rough flow of how the system works, without getting into the technicalities.</div>
-	<img src="assets/working.png" alt="Working of Vangogh" class="img-large"/>
+	<img src="assets/working.jpg" alt="Working of Vangogh" class="img-large"/>
 	<div class="img-caption">Working of Vangogh</div>
 	<div class="p-text">One of the most important change was the color space I chose. RGB is very convenient when it comes to displays. But it doesn’t reflect the way humans perceive colors. Importantly, the  difference between numerical representations doesn’t reflect the perceived difference. This is a problem when we do averaging go colors. Hence I went with LAB which was created by Adobe that is closer to how humans perceive.</div>
-	<img src="assets/colorspace.png" alt="RGB vs LAB color space" class="img-fit">
+	<img src="assets/colorspace.jpg" alt="RGB vs LAB color space" class="img-fit">
 	<div class="img-caption">RGB and LAB colorspace</div>
 	<div class="p-text">Due to the colourspace and better calibrated K-Means clustering, the accuracy was greatly improved. The initial clustering of the image was able to remove the outliers. Final trimming of the palettes using color theory, helped in producing accurate and usable palettes.</div>
-	<img src="assets/oldnew.png" alt="Vangogh 1.0 vs Vangogh 2.0" class="img-large">
+	<img src="assets/oldnew.jpg" alt="Vangogh 1.0 vs Vangogh 2.0" class="img-large">
 	<div class="img-caption">Vangpgh 1.0 vs Vangogh 2.0</div>
 	<div class="p-text">Color distribution is something that had always been hard to visualise. Although we have histograms, it does’t give an intuitive sense of the color profile of images or palettes. Hence, I created a 3D visualisation of the colors in the image, that paints a better picture of the chromatic composition. Here, the RGB values of colors are used to plot a color as a point in 3D space. The idea is to give a glimpse of how the the distribution remains similar for similar themes.</div>
-	<img src="assets/3dform.png" alt="Visualising color profile" class="img-large">
+	<img src="assets/3dform.jpg" alt="Visualising color profile" class="img-large">
 	<div class="img-caption">Visualising Color profile</div>
 	<div class="p-text">I wanted it to be easier to pick the colors from Vangogh to be used in different applications. Here, one can copy the color code by clicking on a color and can choose from three different color spaces. The whole palette can be downloaded as an image, which can be used to color pick in various graphic design applications.</div>
-	<img src="assets/download.png" alt="Color picking features" class="img-fit">
+	<img src="assets/download.jpg" alt="Color picking features" class="img-fit">
 	<div class="img-caption">Color picking features</div>
 	<div class="p-text">Some palettes primarily have lighter colors. Some have dark colors. To handle this, I added a dark theme, which helps in reducing the interference from the background.</div>
-	<img src="assets/darklight.png" alt="Dark and light themes" class="img-large">
+	<img src="assets/darklight.jpg" alt="Dark and light themes" class="img-large">
 	<div class="img-caption">Dark and Light themes</div>
 	<div class="p-text">One of the most requested feature during the run of the prototype was the ability to extract the palette from a single image. It made sense as many a times, we take inspirations from images and illustrations. Since Vangogh uses the same mechanism underneath to generate palettes, it was just a matter of creating a separate interface.</div>
-	<img src="assets/vangogh-image.png" alt="Vangogh Image" class="img-large"/>
+	<img src="assets/vangogh-image.jpg" alt="Vangogh Image" class="img-large"/>
 	<div class="img-caption">Palettes generated using Vangogh Image</div>
 	<div class="p-text">As Vangogh was designed to be a tool, it was necessary to include a simple description of all the features it has. I created an overlay that describes the different features. The overlay is shown the first time a user visits the site. On subsequent visits, the overlay is shows only under the ‘Help’ section. This is achieved using a non-tracking cookie.</div>
-	<img src="assets/help-main.png" alt="Feature labels" class="img-cover">
+	<img src="assets/help-main.jpg" alt="Feature labels" class="img-cover">
 	<div class="img-caption">Overlay on Vangogh Search</div>
-	<img src="assets/help-img.png" alt="Feature labels" class="img-cover">
+	<img src="assets/help-img.jpg" alt="Feature labels" class="img-cover">
 	<div class="img-caption">Overlay on Vangogh Image</div>
 	<div class="page-break"></div>
 	<div class="head-1">Whats next : <span class="purple">Roadmap</span></div>
 	<div class="p-text">Although, the system currently gives usable palettes, its no where closer to suggest palettes with human accuracy. For term that are really abstract like ‘trust’, the system fails to give a good palette. This is because we don’t have a solid color representation for such terms, and Vangogh in a way is a direct reflection of how we use palettes in artworks we create.</div>
-	<img src="assets/goodbad.png" alt="Accuracy on different terms" class="img-large">
+	<img src="assets/goodbad.jpg" alt="Accuracy on different terms" class="img-large">
 	<div class="img-caption">Accuracy on different terms</div>
 	<div class="p-text">As I learn more advanced methods of AI and color theory, I plan to improve Vangogh continuously in various aspects.</div>
 	<ul class="list-elements">
 		<li>Have the ability to distinguish between background effects and subject to have a better representative image</li>
 		<li>Compare the search terms and palettes generated for contextual appropriateness</li>
 		<li>Have the ability to get user rating for color palettes to learn over time what makes a good color palette</li>
-		<li>Let the user tweak the palettes in app and learn from the tweaks</li>
+		<li>Let the user tweak the palettes in-app and learn from the tweaks</li>
 	</ul>
 	<div class="page-break"></div>
 	<div class="head-1">Contribute</div>
@@ -109,4 +127,7 @@
 	</a>
 	<div class="page-space"></div>
 </body>
+<script type="text/javascript">
+	firebase.analytics().logEvent('vangogh');
+</script>
 </html>

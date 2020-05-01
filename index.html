@@ -4,24 +4,120 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Portfolio - Poobesh</title>
-
-	<!-- update the version number as needed -->
-	<script defer src="/__/firebase/7.6.0/firebase-app.js"></script>
-	<!-- include only the Firebase features as you need -->
-	<script defer src="/__/firebase/7.6.0/firebase-auth.js"></script>
-	<script defer src="/__/firebase/7.6.0/firebase-database.js"></script>
-	<script defer src="/__/firebase/7.6.0/firebase-messaging.js"></script>
-	<script defer src="/__/firebase/7.6.0/firebase-storage.js"></script>
-	<!-- initialize the SDK after all desired features are loaded -->
-	<script defer src="/__/firebase/init.js"></script>
 	<link rel="stylesheet" href="assets/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display&display=swap" rel="stylesheet">
+	<link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="assets/favicon.png" type="image/x-icon">
+	<script src="/__/firebase/7.7.0/firebase-app.js"></script>
+	<script src="/__/firebase/7.7.0/firebase-analytics.js"></script>
+	<script src="/__/firebase/init.js"></script>
+
+	<!-- Primary Meta Tags -->
+	<title>Portfolio - Poobesh</title>
+	<meta name="title" content="Portfolio - Poobesh Gowtham">
+	<meta name="description" content="Hi ! I'm Poobesh Gowtham, an interaction design student who dabbles with design and data. I love brewing ideas into products.">
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://poobesh.xyz/">
+	<meta property="og:title" content="Portfolio - Poobesh Gowtham">
+	<meta property="og:description" content="Hi ! I'm Poobesh Gowtham, an interaction design student who dabbles with design and data. I love brewing ideas into products.">
+	<meta property="og:image" content="https://poobesh.xyz/assets/preview.png">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://poobesh.xyz/">
+	<meta property="twitter:title" content="Portfolio - Poobesh Gowtham">
+	<meta property="twitter:description" content="Hi ! I'm Poobesh Gowtham, an interaction design student who dabbles with design and data. I love brewing ideas into products.">
+	<meta property="twitter:image" content="https://poobesh.xyz/assets/preview.png">
+
 </head>
-<body>
-	awesome stuff brewing..
+
+<body id="pf-bg">
+	<div id="nav-bar-main">
+		<a href="https://poobesh.xyz/" id="home-link-main">PG</a>
+		<div id="nav-link-holder">
+			<a href="https://poobesh.xyz/" class="nav-links">portfolio</a>
+			<a href="https://poobesh.xyz/assets/Poobesh_resume.pdf" target="_blank" class="nav-links">resume</a>
+			<a href="https://poobesh.xyz/about" class="nav-links">about</a>
+		</div>
+	</div>
+	<div class="top-space">
+		<div id="hello">
+			Hi! I’m</br>
+			<span id="name">Poobesh Gowtham</span></br>
+			Brewing ideas into products
+		</div>
+	</div>
+
+	<div class="section-head">KEY PROJECTS</div>
+	<div class="project-holder">
+		<a class="project-card orange-line" href="https://poobesh.xyz/hotbox">
+			<img src="assets/hotbox.png" alt="Hotbox" class="project-img">
+			<div class="project-title orange">Hotbox</div>
+			<div class="project-desc">Research and design of a Meal Planning App for the urban household</div>
+			<div class="tag-holder">
+				<div class="tag">UX Research</div>
+				<div class="tag">UI Design</div>
+			</div>
+		</a>
+		<div class="project-space"></div>
+		<a class="project-card blue-line" href="https://poobesh.xyz/raven">
+			<img src="assets/raven.png" alt="Raven" class="project-img">
+			<div class="project-title blue">Project Raven</div>
+			<div class="project-desc">Developing an Interactive Dashboard to analyse childtrafficking in India</div>
+			<div class="tag-holder">
+				<div class="tag">Data</div>
+				<div class="tag">Design</div>
+				<div class="tag">Code</div>
+			</div>
+		</a>
+		<div class="project-space"></div>
+		<a class="project-card purple-line" href="https://poobesh.xyz/vangogh">
+			<div class="ph-badge-holder">
+				<img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=183805&theme=light&period=daily" alt="VANGOGH - Generate color palettes using keywords, powered by AI | Product Hunt Embed" class="ph-badge">
+			</div>
+			<img src="assets/vangogh.png" alt="Vangogh" class="project-img">
+			<div class="project-title purple">Vangogh</div>
+			<div class="project-desc">Designing and building an AI powered search engine for color palettes</div>
+			<div class="tag-holder">
+				<div class="tag">Design</div>
+				<div class="tag">Code</div>
+				<div class="tag">ML</div>
+			</div>
+		</a>
+	</div>
+	<div class="section-head">DATA VISUALISATIONS</div>
+	<div class="project-holder">
+		<a class="project-card orange-line" target="_blank" href="https://medium.com/pbsh/duomoji-track-and-visualise-emoji-pairs-usage-on-twitter-in-realtime-2f82e356d9a">
+			<img src="assets/duomoji.png" alt="duomoji" class="project-img">
+			<div class="project-title orange">DuoMoji</div>
+			<div class="project-desc">Track and visualise Emoji-pair usage on twitter in realtime</div>
+			<div class="tag-holder">
+				<div class="tag">Design</div>
+				<div class="tag">Code</div>
+			</div>
+		</a>
+		<div class="project-space"></div>
+		<a class="project-card blue-line" target="_blank" href="http://shapeofreddit.firebaseapp.com">
+			<img src="assets/reddit.png" alt="Shape of Reddit" class="project-img">
+			<div class="project-title blue">ShapeOfReddit</div>
+			<div class="project-desc">Visualise the structure of conversations on reddit posts</div>
+			<div class="tag-holder">
+				<div class="tag">Design</div>
+				<div class="tag">Code</div>
+			</div>
+		</a>
+		<div class="project-space"></div>
+		<div class="project-space"></div>
+		<div class="project-space"></div>
+		<div class="project-space"></div>
+
+	</div>
 </body>
 <script type="text/javascript">
-	window.location.replace("https://medium.com/pbsh");
+	firebase.analytics().logEvent('root');
 </script>
+
 </html>

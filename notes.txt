@@ -1,0 +1,22 @@
+
+//TODO
+
++ Change Thumbnail for the projects
++ Vangogh add "featured in" (Pablo Stanley's blog, Prototy.pr)
+
++ Get Duomoji running
++ Duomoji detailed analysis
+	> make inference
+	> suggest new emojis
+	> try to understand why those combos
++ Duomoji About
++ Duomoji Mobile
++ Duomoji Page in portfolio
+
++ ShapeOfReddit - subreddit wise pages
++ ShapeOfReddit Analysis
++ ShapeOfReddit About
++ ShapeOfReddit Mobile
+
++ Raven show the final in the begining
++ Hotbox add wireframes
